@@ -6,6 +6,9 @@
   height: 100vh;
   padding-left: 15px;
   padding-right: 15px;
+  margin-top: 10px;
+  margin-right: 0;
+  margin-left: 0;
 }
 
 .gallery__items {

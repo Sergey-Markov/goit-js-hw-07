@@ -1,10 +1,4 @@
 
-// Используй массив объектов `images` для создания тегов `img` вложенных в `li`.
-// Для создания разметки используй шаблонные строки и `insertAdjacentHTML()`.
-
-// - Все элементы галереи должны добавляться в DOM за одну операцию вставки.
-// - Добавь минимальное оформление галереи флексбоксами или гридами через
-//   css-классы.
 
 const images = [
   {
@@ -23,16 +17,33 @@ const images = [
 const ulEl = document.querySelector('#gallery');
 ulEl.classList.add('gallery');
 
-const imgEl = images.map(image => {
-    const createLiElement = document.createElement('li');
-    createLiElement.classList.add('gallery__items')
-    const imgEl = document.createElement('img');
-    imgEl.src = image.url;
-    imgEl.alt = image.alt;
-    imgEl.classList.add('gallery__image')
-    const imegeItemEl = createLiElement.appendChild(imgEl);
-    return createLiElement;
-});
-ulEl.append(...imgEl);
+const makeGalleryElementsMarkup = ({ url, alt }) => {
+  return `
+          <li class="gallery__items"><img src=${url} alt='${alt}' class="gallery__image"></li>
+        `;
+};
+const makeGalleryElements = images
+  .map(makeGalleryElementsMarkup)
+  .join('');
+
+ulEl.insertAdjacentHTML("afterbegin", makeGalleryElements);
+
+
+
+
+
+
+// *************** Other solution task ************
+// const imgEl = images.map(image => {
+//     const createLiElement = document.createElement('li');
+//     createLiElement.classList.add('gallery__items')
+//     const imgEl = document.createElement('img');
+//     imgEl.src = image.url;
+//     imgEl.alt = image.alt;
+//     imgEl.classList.add('gallery__image')
+//     const imegeItemEl = createLiElement.appendChild(imgEl);
+//     return createLiElement;
+// });
+// ulEl.append(...imgEl);
 
 
