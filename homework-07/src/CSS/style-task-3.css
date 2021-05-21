@@ -1,0 +1,20 @@
+.gallery {
+  display: flex;
+  flex-wrap: nowrap;
+  background-color: brown;
+  width: 100vw;
+  height: 100vh;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.gallery__items {
+  margin-bottom: 10px;
+  margin-right: 10px;
+  list-style: none;
+  width: auto;
+}
+.gallery__image {
+  width: 30vw;
+  height: 30vh;
+}
