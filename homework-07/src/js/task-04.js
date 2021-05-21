@@ -7,3 +7,18 @@
 //   счетчика
 // - Добавь слушатели кликов на кнопки, вызовы функций и обновление интерфейса
 
+const counterValue = 0;
+const spanEl = document.querySelector('#value').textContent = `${counterValue}`;
+console.log(counterValue);
+const btnIncrement = document.querySelector('button[data-action="increment"]');
+console.log(btnIncrement);
+const btnDecrement = document.querySelector('button[data-action="decrement"]');
+
+function increment(counterValue) {
+    return counterValue += 1;
+};
+
+const decrement = (counterValue) => {
+    counterValue -= 1;
+};
+btnIncrement.addEventListener('click', increment);
