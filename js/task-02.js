@@ -7,10 +7,12 @@ const ingredients = [
   'Приправы',
 ];
 const ulEl = document.querySelector('#ingredients');
+
+const newLiElAray = [];
 const ingredientsLiEl = ingredients.map(
     ingedient => {
       const newLiEl = document.createElement('li');
       newLiEl.textContent = ingedient;
-      ulEl.appendChild(newLiEl);
-    }
-);
+      newLiElAray.push(newLiEl);
+  });
+ulEl.append(...newLiElAray);
